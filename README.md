@@ -20,7 +20,7 @@ sudo systemctl enable minecraft@stoneblock-3
 
 - To start the server.
 ```bash
-sudo systemctl start minecraft@stoneblock
+sudo systemctl start minecraft@stoneblock-3
 ```
 
 - To soft-restart the server.
