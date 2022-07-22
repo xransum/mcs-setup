@@ -15,6 +15,7 @@ apt install -y bash screen openjdk-8-jdk-headless # REQUIRED
 
 # Create a dedicated runas user with a home directory.
 # Dedicated run-as user and environment
+groupadd minecraft
 useradd --system --shell $(which bash) --home /home/minecraft -g minecraft minecraft
 mkhomedir_helper minecraft
 
