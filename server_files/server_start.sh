@@ -10,7 +10,7 @@ fi
 
 # Read pack related settings from local settings file
 if [ -f ./settings ]; then
-	. ./settings
+	. ./settings.sh
 else
 	echo "No settings file found in ./settings... Skipping."
 	sleep 2
