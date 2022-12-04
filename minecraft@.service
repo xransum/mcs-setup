@@ -16,14 +16,14 @@ EnvironmentFile=-/home/minecraft/%i/server.conf
 # Run it as a non-root user in a specific directory
 ExecStart=/usr/bin/screen -h 1024 -dmS mc-%i ./server_start.sh
 
-ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "say Server shutdown in-progress! Saving map..."'
+ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "say Server shutdown in-progress! Saving map..."\\015'
 ExecStop=/bin/sh -c '/bin/sleep ${SHUTDOWN_DELAY}'
-ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "save-all"'
-ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "stop"'
+ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "save-all"\\015'
+ExecStop=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff "stop"\\015'
 ExecStop=/bin/sh -c '/bin/sleep ${POST_SHUTDOWN_DELAY}'
 
 Restart=on-failure
-RestartSec=60s
+RestartSec=30s
 
 [Install]
 WantedBy=multi-user.target
