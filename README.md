@@ -6,9 +6,9 @@ Just a WIP repo in helping with automating minecraft hosting and server creation
 
 ## Overview
 - *IMPORTANT*: This has only been tested using - [Debian 10 "Buster" Release](https://www.debian.org/News/2019/20190706).
-- [minecraft@.service](https://github.com/the-ransum/mcs-setup/blob/main/minecraft%40.service) - The systemd unit file for being able to easily run headless services.
-- [setup.sh](https://github.com/the-ransum/mcs-setup/blob/main/setup.sh) - Setup script that provides the commands necessary for the initial setup of the environment.
-- [update-owner.sh](https://github.com/the-ransum/mcs-setup/blob/main/update-owner.sh) - Script for updating all file ownership to the valid runas instead of root or the user themselves. 
+- [minecraft@.service](https://github.com/xransum/mcs-setup/blob/main/minecraft%40.service) - The systemd unit file for being able to easily run headless services.
+- [setup.sh](https://github.com/xransum/mcs-setup/blob/main/setup.sh) - Setup script that provides the commands necessary for the initial setup of the environment.
+- [update-owner.sh](https://github.com/xransum/mcs-setup/blob/main/update-owner.sh) - Script for updating all file ownership to the valid runas instead of root or the user themselves. 
 
 
 ## Setup 
