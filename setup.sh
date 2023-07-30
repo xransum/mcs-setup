@@ -1,23 +1,27 @@
 #!/bin/bash
 
-# DO NOT RUN THIS SCRIPT
-
-# Escalate rights
-sudo su - root -s $(which bash)
-
-# Pull from TIP and install updates
-apt update
-apt -y upgrade
+# Update everything
+sudo apt update -y && sudo apt upgrade -y
 
 # Install dependencies
-apt install -y nano curl grep zip unzip # potentially optional
-apt install -y bash screen openjdk-8-jdk-headless # REQUIRED
+sudo apt install -y git nano curl wget grep zip unzip bash screen
 
-# Create a dedicated runas user with a home directory.
-# Dedicated run-as user and environment
-groupadd minecraft
-useradd --system --shell $(which bash) --home /home/minecraft -g minecraft minecraft
-mkhomedir_helper minecraft
+# Create user
+sudo groupadd minecraft
+sudo useradd --system --shell $(which bash) --home /home/minecraft -g minecraft minecraft
+sudo mkhomedir_helper minecraft
+sudo su - minecraft
 
-# Systemd Unit file for automating server startups
-cp -fv ./minecraft@.service /etc/systemd/system/minecraft@.service
+# Install Java JRE's: 8, 11, 17, & 19
+sudo apt install -y openjdk-8-jre openjdk-11-jre openjdk-17-jre openjdk-19-jre
+
+# Configure defaults
+sudo update-alternatives --config java
+
+# Setup MC systemctl
+sudo nano /etc/systemd/system/minecraft@.service
+sudo systemctl daemon-reload
+
+
+sudo logrotate -vf /etc/logrotate.d/minecraft
+sudo cat /home/minecraft/all-the-mods-8/screenlog.0
