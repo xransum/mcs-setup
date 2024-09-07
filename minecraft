@@ -1,0 +1,9 @@
+# /etc/logrotate.d/minecraft
+
+/home/minecraft/*/logs/*.log.gz {
+        daily
+        missingok
+        nocompress
+        rotate 0
+        maxage 7
+}
