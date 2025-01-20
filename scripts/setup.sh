@@ -8,7 +8,7 @@ sudo apt install -y git nano curl wget grep zip unzip bash screen
 
 # Create user
 sudo groupadd minecraft
-sudo useradd --system --shell $(which bash) --home /home/minecraft -g minecraft minecraft
+sudo useradd --system --shell "$(which bash)" --home /home/minecraft -g minecraft minecraft
 sudo mkhomedir_helper minecraft
 sudo su - minecraft
 
@@ -21,7 +21,6 @@ sudo update-alternatives --config java
 # Setup MC systemctl
 sudo nano /etc/systemd/system/minecraft@.service
 sudo systemctl daemon-reload
-
 
 sudo logrotate -vf /etc/logrotate.d/minecraft
 sudo cat /home/minecraft/all-the-mods-8/screenlog.0
