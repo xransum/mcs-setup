@@ -37,3 +37,55 @@ sudo systemctl restart minecraft@stoneblock-3
 ```bash
 sudo systemctl disable minecraft@stoneblock-3
 ```
+
+## Java Versions Per Server Version
+
+For any of the versions below, scroll to the latest version for the major version you require and copy the URL to the `Linux x64 Debian Package` and follow the steps under [Installing a Java Version](#installing-a-java-version):
+
+- [Java 8](https://www.oracle.com/in/java/technologies/javase/javase8u211-later-archive-downloads.html):
+  - Forge / Fabric <=1.16
+- [Java 11](https://www.oracle.com/in/java/technologies/javase/jdk11-archive-downloads.html):
+  - Vanilla `1.16 and below`
+  - Paper / spigot `1.16 and below`
+  - Bungeecord / Waterfall: `any`
+- [Java 16](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html):
+  - Vanilla `1.17 and above`
+  - Paper / spigot `1.17 and above`
+  - Forge / Fabric `1.17 and above`
+- [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html):
+  - Vanilla `1.18 and above`
+  - Paper / Spigot `1.18 and above`
+  - Forge / Fabric `1.18 and above`
+- [Java 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html):
+  - Vanilla `1.20.5 and above`
+  - Paper / Spigot `1.20.5 and above`
+  - Forge / Fabric `1.20.5 and above`
+
+
+## Installing a Java Version
+
+1. **Download the Debian package for the desired Java version**
+   Replace the URL with the version you need. For example, to install Java 21:
+   ```bash
+   wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+   ```
+
+2. **Install the package using `dpkg`**
+   This will install the downloaded Java Development Kit (JDK):
+   ```bash
+   sudo dpkg -i jdk-21_linux-x64_bin.deb
+   ```
+
+3. **Verify the installation**
+   Check the installed Java version to confirm:
+   ```bash
+   java -version
+   ```
+
+4. **Set the default Java version**
+   If multiple Java versions are installed, use `update-alternatives` to configure the default:
+   ```bash
+   sudo update-alternatives --config java
+   ```
+
+   Follow the on-screen prompts to select the desired version.
